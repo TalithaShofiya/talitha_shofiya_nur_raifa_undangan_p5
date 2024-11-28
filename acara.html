@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Undangan</title>
+    <link rel="stylesheet" href="../stylesheet/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <audio id="myAudio" src="../music/Maher Zain.mp3" preload="auto" loop></audio>
+
+    <script>
+      const audio = document.getElementById('myAudio');
+  
+      if (!localStorage.getItem('audioPlayed')) {
+          audio.play();
+          localStorage.setItem('audioPlayed', 'true');
+      }
+  
+      audio.onended = function() {
+          localStorage.removeItem('audioPlayed');
+      };
+    </script>
+
+    <div class="akad">
+        <p class="judul-awal" style="animation: moveLeftToRight 3s forwards;">Akad nikah</p>
+        <p class="isi-acara" style="opacity: 0; animation: moveRightToLeft 3s forwards; animation-delay: 2s;">Akad nikah sudah dilaksanakan pada tanggal <u>14 Desember 2036, di KUA.</u></p>
+    </div>
+
+    <div class="resepsi">
+        <p class="judul-awal" style="opacity: 0; animation: moveLeftToRight 3s forwards; animation-delay: 3s;">Resepsi</p>
+        <p class="isi-acara" style="font-size: 16px; opacity: 0; animation: moveRightToLeft 3s forwards; animation-delay: 4s;">Acara resepsi akan segera dilaksanakan pada <u>Minggu, 12 Desember 2024, Gedung Sultan Suriansyah.</u></p>
+    </div>
+
+    <p class="judul-awal">Countdown</p>
+
+    <div class="container-countdown">
+      <div class="countdown">
+          <div class="time" id="hari">00<br> <span>Hari</span></div>
+          <div class="time" id="jam">00<br> <span>Jam</span></div>
+          <div class="time" id="menit">00<br> <span>Menit</span></div>
+          <div class="time" id="detik">00<br> <span>Detik</span></div>
+      </div>
+  </div>
+
+    <script>
+      let tanggalPernikahan = new Date("Dec 14, 2036 00:00:00").getTime();
+      let x = setInterval(function() {
+
+        let sekarang = new Date().getTime();
+
+        let selisih = tanggalPernikahan - sekarang;
+
+        let hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+        let jam = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let menit = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
+        let detik = Math.floor((selisih % (1000 * 60)) / 1000);
+
+        document.getElementById("hari").innerHTML = hari + " <span>Hari</span>";
+        document.getElementById("jam").innerHTML = jam + " <span>Jam</span>";
+        document.getElementById("menit").innerHTML = menit + " <span>Menit</span>";
+        document.getElementById("detik").innerHTML = detik + " <span>Detik</span>";
+
+        if (selisih < 0) {
+            clearInterval(x);
+            document.getElementById("hari").innerHTML = "0 <span>Hari</span>";
+            document.getElementById("jam").innerHTML = "0 <span>Jam</span>";
+            document.getElementById("menit").innerHTML = "0 <span>Menit</span>";
+            document.getElementById("detik").innerHTML = "0 <span>Detik</span>";
+        }
+      }, 1000);
+    </script>
+
+    <footer class="navbar">
+        <a href="mempelai.html"><img src="../assets/icon/icon-home.svg" class="icon"></a> 
+        <a href="kata.html"><img src="../assets/icon/icon-kata.svg" class="icon"></a>
+        <img src="../assets/icon/icon-choose-acara.svg" class="icon-choose">
+        <a href="maps.html"><img src="../assets/icon/icon-maps.svg" class="icon"></a>
+        <a href="rsvp.html"><img src="../assets/icon/icon-rsvp.svg" class="icon"></a>
+        <a href="momen.html"><img src="../assets/icon/icon-momen.svg" class="icon"></a>
+        <a href="penutup.html"><img src="../assets/icon/icon-penutup.svg" class="icon"></a>
+    </footer>
+  </body>
+</html>

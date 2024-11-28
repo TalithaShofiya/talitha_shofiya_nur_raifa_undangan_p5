@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Undangan</title>
+    <link rel="stylesheet" href="../stylesheet/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <audio id="myAudio" src="../music/Maher Zain.mp3" preload="auto" loop></audio>
+
+    <script>
+      const audio = document.getElementById('myAudio');
+  
+      if (!localStorage.getItem('audioPlayed')) {
+          audio.play();
+          localStorage.setItem('audioPlayed', 'true');
+      }
+  
+      audio.onended = function() {
+          localStorage.removeItem('audioPlayed');
+      };
+    </script>
+
+    <div class="background-extra"></div>
+
+    <div class="kembali-tombol" style="padding-bottom: 50px;">
+        <a href="rsvp.html"><button class="kembali"><p><</p></button></a>
+    </div>
+
+    <div class="comment-section">
+        <h2 style="text-align: center;">Komentar</h2>
+        <input type="text" id="nameInput" placeholder="Masukkan nama Anda...">
+        <textarea id="commentInput" placeholder="Tulis komentar di sini..."></textarea>
+        <button id="submitComment" class="submit">Kirim</button>
+        <div id="commentsContainer">
+            <h3>Komentar yang Sudah Ditulis:</h3>
+            <div id="commentsList"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('submitComment').addEventListener('click', function() {
+            const nameInput = document.getElementById('nameInput');
+            const commentInput = document.getElementById('commentInput');
+            const nameText = nameInput.value.trim();
+            const commentText = commentInput.value.trim();
+
+            if (nameText && commentText) {
+                const commentsList = document.getElementById('commentsList');
+                
+                // Buat elemen baru untuk komentar
+                const commentElement = document.createElement('div');
+                commentElement.classList.add('comment');
+                commentElement.innerHTML = `<strong>${nameText}</strong>${commentText}`;
+                
+                // Tambahkan ke dalam daftar komentar
+                commentsList.appendChild(commentElement);
+                
+                // Bersihkan input
+                nameInput.value = '';
+                commentInput.value = '';
+            } else {
+                alert('Tolong masukkan nama dan komentar!');
+            }
+        });
+    </script>
+</body>
+</html>

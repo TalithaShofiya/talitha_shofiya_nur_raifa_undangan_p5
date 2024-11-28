@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan</title>
+    <link rel="stylesheet" href="../stylesheet/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="myAudio" src="../music/Maher Zain.mp3" preload="auto" loop></audio>
+
+    <script>
+      const audio = document.getElementById('myAudio');
+  
+      if (!localStorage.getItem('audioPlayed')) {
+          audio.play();
+          localStorage.setItem('audioPlayed', 'true');
+      }
+  
+      audio.onended = function() {
+          localStorage.removeItem('audioPlayed');
+      };
+    </script>
+
+    <div class="background-extra"></div>
+    <div class="kembali-tombol">
+        <a href="rsvp.html"><button class="kembali"><p><</p></button></a>
+    </div>
+    <p class="judul-awal" style="color: azure;">Hadiah</p>
+
+    <div class="rekening-container">
+    <div class="rekening">
+        <img src="../assets/img/BANK_BRI_logo.svg">
+        <input type='text' class="rekening-frame" id="rekening1" value="1234567890" placeholder="Rekening 1"/>
+        <button id="tombolSalin1" class="tombol-salin">Salin Rekening 1</button><br><br>
+    
+        <img src="../assets/img/BankNegaraIndonesia46-logo.svg">
+        <input type='text' class="rekening-frame" id="rekening2" value="0987654321" placeholder="Rekening 2"/>
+        <button id="tombolSalin2" class="tombol-salin">Salin Rekening 2</button><br><br>
+    
+        <img src="../assets/img/Bank_Mandiri_logo.svg">
+        <input type='text' class="rekening-frame" id="rekening3" value="1122334455" placeholder="Rekening 3"/>
+        <button id="tombolSalin3" class="tombol-salin">Salin Rekening 3</button><br>
+
+        <script>
+            function setupCopyButton(buttonId, inputId) {
+            document.getElementById(buttonId).onclick = function() {
+                const rekening = document.getElementById(inputId);
+                navigator.clipboard.writeText(rekening.value).then(() => {
+                    alert("Nomor rekening disalin: " + rekening.value);
+                }).catch(err => {
+                    alert("Gagal menyalin: " + err);
+                });
+            };
+        }
+
+            setupCopyButton("tombolSalin1", "rekening1");
+            setupCopyButton("tombolSalin2", "rekening2");
+            setupCopyButton("tombolSalin3", "rekening3");
+        </script>
+    </div>
+    </div>
+</body>
+</html>

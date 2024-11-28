@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Undangan</title>
+    <link rel="stylesheet" href="../stylesheet/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <audio id="myAudio" src="../music/Maher Zain.mp3" preload="auto" loop></audio>
+
+    <script>
+      const audio = document.getElementById('myAudio');
+  
+      if (!localStorage.getItem('audioPlayed')) {
+          audio.play();
+          localStorage.setItem('audioPlayed', 'true');
+      }
+  
+      audio.onended = function() {
+          localStorage.removeItem('audioPlayed');
+      };
+    </script>
+
+    <p class="judul-awal">Thank you</p>
+
+    <div class="penutup-pengantin1">
+      <p class="kalimat" style="opacity: 0; animation: fadeIn 1s forwards; animation-delay: 2s;">Demikian kami sampaikan undangan kami. Kami mengharapkan kehadiran anda.</p>
+    </div>
+
+    <div class ="hormat" style="opacity: 0; animation: fadeIn 1s forwards; animation-delay: 2.5s;"><p>Sincerely,</p></div>
+
+    <div class="penutup">
+      <div class="nama-penutup" style="opacity: 0; animation: moveLeftToRight 3s forwards; animation-delay: 3s;"><p><b>Luke</b><br><br>bin<br>John</p></div>
+
+      <div class="dan" style="opacity: 0; font-size: 80px; font-weight: bold; animation: fadeIn 1s forwards; animation-delay: 3s;">&</div>
+
+      <div class="nama-penutup" style="opacity: 0; animation: moveRightToLeft 3s forwards; animation-delay: 3s;"><p><b>Talitha Shofiya Nur Raifa</b><br><br>binti<br>Hilman Apriyandi</p></div>
+    </div>
+
+    <div class="pembungkus" style="opacity: 0; animation: fadeIn 2s forwards; animation-delay: 4s;">
+      <div class="copyright">
+        <p>Made by: Talitha Shofiya Nur Raifa<br><br>Contact me at:<br> +62 831-4765-6116(WA ONLY)</p>
+      </div>
+    </div>
+
+    <footer class="navbar">
+        <a href="mempelai.html"><img src="../assets/icon/icon-home.svg" class="icon"></a>
+        <a href="kata.html"><img src="../assets/icon/icon-kata.svg" class="icon"></a>
+        <a href="acara.html"><img src="../assets/icon/icon-acara.svg" class="icon"></a>
+        <a href="maps.html"><img src="../assets/icon/icon-maps.svg" class="icon"></a>
+        <a href="rsvp.html"><img src="../assets/icon/icon-rsvp.svg" class="icon"></a>
+        <a href="momen.html"><img src="../assets/icon/icon-momen.svg" class="icon"></a>
+        <img src="../assets/icon/icon-choose-penutup.svg" class="icon-choose">
+    </footer>
+  </body>
+</html>

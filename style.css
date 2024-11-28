@@ -1,0 +1,742 @@
+body {
+    font-family: 'Inika';
+    color: #312B2B;
+    margin: 0%;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../assets/background-img/Bekgron.svg);
+    position: absolute;
+    z-index: -1;
+    margin: 0%;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#B3CEED, #ADB0EA);
+    position: absolute;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+
+.border-right-top {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    animation: slideInTop 1s forwards;
+}
+
+.border-left-top {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    animation: slideInTop 1s forwards;
+}
+
+.border-right-bottom {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+    animation: slideInBottom 1s forwards;
+}
+
+.border-left-bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1;
+    animation: slideInBottom 1s forwards;
+}
+
+@keyframes slideInTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0; 
+    }
+    to {
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0; 
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1; 
+    }
+}
+
+#audioContainer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; 
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 2; 
+}
+
+.play-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.play-button svg {
+    width: 24px;
+    height: 24px;
+    fill: #007BFF;
+}
+
+.cover-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    text-align: center;
+}
+
+.judul {
+    animation: fadeIn 1s forwards;
+    font-family: 'Imperial Script';
+    font-size: 40px;
+}
+
+.sambutan {
+    animation: fadeIn 1s forwards;
+    margin-top: 353px;
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+.buka {
+    opacity: 0;
+    animation: fadeIn 5s forwards;
+    padding: 10px;
+    background-color: #D3C7C7;
+    font-size: 20px;
+    border-radius: 7px;
+    border: none;
+}
+
+.buka:hover {
+    background-color: gray;
+    color: #fff;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.container-mempelai {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeIn 1s forwards;
+}
+
+.judul-awal {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+    font-family: 'Imperial Script';
+    animation: fadeIn 1s forwards;
+}
+
+.foto-mempelai {
+    width: 150px;
+    height: 150px;
+}
+
+.nama-mempelai {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
+
+.mempelai-laki {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.mempelai-perempuan {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #ABA9A9;
+    bottom :0;
+    left: 0;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1.5%;
+    justify-content: center;
+    position: fixed;
+}
+
+.icon-choose {
+    background-color: #676767;
+    border-radius: 5px;
+    width: 46px;
+    height: 46px;
+}
+
+.icon:hover {
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    width: 46px;
+    height: 46px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.quotes {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+.surah {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    width: 90%;
+    align-self: center;
+    font-family: sans-serif;
+}
+
+.isi {
+    font-size: 25px;
+}
+
+.bismillah {
+    font-size: 35px;
+}
+
+#judul {
+    animation: moveRightToLeft 3s forwards;
+}
+
+#container {
+    animation: moveLeftToRight 3s forwards;
+}
+
+@keyframes moveRightToLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0); 
+        opacity: 1;
+    }
+}
+
+@keyframes moveLeftToRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0); 
+        opacity: 1;
+    }
+}
+
+.peta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.google-maps {
+    width: 100%;
+    height: 420px;
+    align-self: center;
+}
+
+.map-frame {
+    position: relative;
+    width: 80%;
+    height: 420px;
+}
+
+.alamat {
+    font-size: 14px;
+    margin-bottom: 100px;
+}
+
+.judul-acara {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Imperial Script';
+}
+
+.akad {
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.countdown {
+    width: 100%;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.time {
+    padding-top: 11px;
+    border-radius: 4px;
+    border: solid #c5c5c5 1%;
+    text-align: center;
+    width: 65px;
+    height: 60px;
+    background-color: #fff;
+}
+
+.time span {
+    display: block;
+}
+
+.resepsi {
+    margin-top: 15px;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.container-rsvp {
+    flex-direction: column; 
+    max-width: 400px; 
+    margin: 50px auto; 
+    text-align: center;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    border: solid #ABA9A9 3px;
+}
+
+.tombol {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.submit {
+    color: #000;
+    padding: 10px 25px;
+    background-color: ghostwhite;
+    border-radius: 4px;
+    border: solid #676767 2px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: slategray;
+    color: #fff;
+}
+
+.thank-you {
+    display: none;
+}
+
+.background-extra {
+    width: 100%;
+    height: 100%;
+    background-color: #312B2B;
+    position: absolute;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(10px);
+}
+
+.kembali-tombol {
+    width: 100%;
+}
+
+.kembali {
+    border: none;
+    font-weight: bold;
+    background-color: transparent;
+    width: 40px;
+    color: #f1f1f1;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.comment-section {
+    max-width: 600px;
+    margin: auto;
+    background-color: azure;
+    padding: 10px;
+}
+
+#nameInput, #commentInput {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#submitComment {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#commentsList {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.comment {
+    border-bottom: 1px solid #eee;
+    padding: 5px 0;
+}
+
+.comment strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.rekening-container {
+    display: flex;
+    justify-content: center;
+}
+
+.rekening {
+    padding: 20px;
+    width: 300px;
+    height: 500px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.rekening-frame {
+    width: 260px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.tombol-salin {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tombol-salin:hover {
+    background-color: #0056b3;
+}
+
+.prewed-video {
+    align-self: center;
+}
+
+.video {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+  
+.foto-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .container {
+    position: relative;
+    width: 40%;
+    align-self: center;
+  }
+  
+  .mySlides {
+    display: none;
+  }
+  
+  .cursor {
+    cursor: pointer;
+  }
+  
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .column {
+    width: 16.66%;
+  }
+  
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+  .gambar {
+    animation: fadeIn 1s forwards;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .gambar:hover {
+    opacity: 0.7;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  
+  .modal-content {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @keyframes zoom {
+    from {
+      transform: scale(0)
+    }
+    to {
+      transform: scale(1)
+    }
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  @media only screen and (max-width: 700px) {
+    .modal-content {
+      width: 100%;
+    }
+  }
+
+.penutup {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    text-align: center;
+}
+
+.kalimat {
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.hormat {
+    padding-left: 3%;
+}
+
+.nama-penutup {
+    font-size: 18px;
+}
+
+.pembungkus {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 25%;
+    padding-bottom: 100px;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 16px;
+    width: 80%;
+    height: 5%;
+    background-color: aliceblue;
+    border-radius: 4%;
+}
+
+@media (min-width: 500px) {
+    .navbar {
+        gap: 5%;
+    }
+}
+
+@media (min-width: 760px) {
+    .prewed-video {
+        width: 640px;
+        height: 480px;
+    }
+
+    .navbar {
+        gap:8%;
+    }
+
+    .time {
+        padding-top: 20px;
+        width: 95px;
+        height: 90px;
+        font-size: 20px;
+    }
+
+    .copyright {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .navbar {
+        gap: 10%;
+    }
+
+    .google-maps {
+        width: 60%;
+    }
+
+    .foto {
+        display: grid;
+    }
+}
+
+@media (max-width: 1025px) {
+    .container {
+        width: 80%;
+    }
+
+    .column {
+        width: 50%;
+    }
+}

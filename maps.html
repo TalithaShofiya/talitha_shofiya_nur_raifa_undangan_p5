@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Undangan</title>
+    <link rel="stylesheet" href="../stylesheet/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <audio id="myAudio" src="../music/Maher Zain.mp3" preload="auto" loop></audio>
+
+    <script>
+      const audio = document.getElementById('myAudio');
+  
+      if (!localStorage.getItem('audioPlayed')) {
+          audio.play();
+          localStorage.setItem('audioPlayed', 'true');
+      }
+  
+      audio.onended = function() {
+          localStorage.removeItem('audioPlayed');
+      };
+    </script>
+
+    <div class="peta">
+      <p class="judul-awal">Maps</p>
+
+      <div class="google-maps" style="animation: fadeIn 1s forwards;">    
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d63731.308389091544!2d114.590462!3d-3.298926!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de423a3fb5f2659%3A0x75f1cc80aad78356!2sGedung%20Sultan%20Suriansyah!5e0!3m2!1sen!2sid!4v1726529616934!5m2!1sen!2sid" style="border:5%;" allowfullscreen="" full loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-frame"></iframe>
+      </div>
+
+      <p class="alamat" style="animation: fadeIn 1s forwards;">Jl. Brig Jend. Hasan Basri, Sungai Miai, Kec. Banjarmasin Utara, Kota Banjarmasin, Kalimantan Selatan 70123</p>
+    </div>
+
+    <footer class="navbar">
+      <a href="mempelai.html"><img src="../assets/icon/icon-home.svg" class="icon"></a> 
+      <a href="kata.html"><img src="../assets/icon/icon-kata.svg" class="icon"></a>
+      <a href="acara.html"><img src="../assets/icon/icon-acara.svg" class="icon"></a>
+      <img src="../assets/icon/icon-choose-maps.svg" class="icon-choose">
+      <a href="rsvp.html"><img src="../assets/icon/icon-rsvp.svg" class="icon"></a>
+      <a href="momen.html"><img src="../assets/icon/icon-momen.svg" class="icon"></a>
+      <a href="penutup.html"><img src="../assets/icon/icon-penutup.svg" class="icon"></a>
+    </footer>
+  </body>
+</html>
