@@ -9,7 +9,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url(../assets/background-img/Bekgron.svg);
+    background-image: url(Bekgron.svg);
     position: absolute;
     z-index: -1;
     margin: 0%;
