@@ -9,20 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <audio id="myAudio" src="Maher Zain.mp3" preload="auto" loop></audio>
-
-    <script>
-      const audio = document.getElementById('myAudio');
-  
-      if (!localStorage.getItem('audioPlayed')) {
-          audio.play();
-          localStorage.setItem('audioPlayed', 'true');
-      }
-  
-      audio.onended = function() {
-          localStorage.removeItem('audioPlayed');
-      };
-    </script>
+    <iframe src="audio.html" style="display:none;" id="audio-frame"></iframe>
 
     <div class="background-extra"></div>
     <div class="kembali-tombol">
